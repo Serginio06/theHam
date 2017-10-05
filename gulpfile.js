@@ -24,46 +24,14 @@ var replace = require('gulp-replace');
 // var yourDirectory = "/Content/images/";
 
 
-gulp.task('webpackBuild', function() {
-    return run('webpack').exec();
+gulp.task('yarnStart', function() {
+    return run('yarn start').exec();
 });
 
 // gulp.task('webpackBuild', function() {
-//     return gulp.src('src/components/index.js')
-//                .pipe(webpack( require('./webpack.config.js') ))
-//                .pipe(gulp.dest('build/'));
+//     return run('webpack').exec();
 // });
 
-// function build (watch, callback) {
-//     var plugins = [
-//         new webpack.DefinePlugin({
-//             'process.env.NODE_ENV': JSON.stringify(isProduction ? 'production' : 'development')
-//         })
-//     ];cl
-//
-//     if (isProduction) {
-//         plugins.push(new webpack.optimize.UglifyJsPlugin());
-//     }
-//
-//     webpack({
-//         plugins: plugins,
-//         // cache: true,
-//         watch: watch,
-//         module: {
-//             loaders: [
-//                 { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' }
-//             ]
-//         },
-//         // devtool: "#source-map",
-//         entry: path.resolve(__dirname, 'src/main.js'),
-//         output: {
-//             filename: 'bundle.js',
-//             path: path.resolve(__dirname, 'build')
-//         }
-//     }, function (err, stats) {
-//         if (callback) callback();
-//     });
-// }
 
 gulp.task('js', function (callback) {
     build(false, callback);
@@ -84,7 +52,7 @@ gulp.task('build-css', function() {
                .pipe(sass ().on ('error', sass.logError))
                .pipe(sourcemaps.write())// Add the map to modified source.
                // .pipe(replace('./../../static', './React/TheHam/build')) //unrem before publish on github pages
-               .pipe(replace('./../../static', '.')) //unrem for local test
+               .pipe(replace('./../../public', '.')) //unrem for local test
 
                .pipe(gulp.dest('src/css'));
 });
@@ -96,36 +64,36 @@ gulp.task('build-css', function() {
 //                .pipe(gulp.dest('public/assets/templates'))
 // });
 //
-gulp.task('copyIndexFile', function () {
-    gutil.log ('Index.html copying...');
-    return gulp.src('static/index.html')
-               // .pipe(gulp.dest('build'))
-               .pipe(gulp.dest('./'))
-});
+// gulp.task('copyIndexFile', function () {
+//     gutil.log ('Index.html copying...');
+//     return gulp.src('public/index.html')
+//                // .pipe(gulp.dest('build'))
+//                .pipe(gulp.dest('./'))
+// });
 
 gulp.task('copyData', function () {
     gutil.log ('/Data copying...');
-    return gulp.src('static/data/*.*')
-               .pipe(gulp.dest('build/data'))
+    return gulp.src('src/data/*.*')
+               .pipe(gulp.dest('public/data'))
 });
 
 gulp.task('copyImages', function () {
     gutil.log ('/Images copying...');
-    return gulp.src('static/images/**/*.*')
-               .pipe(gulp.dest('build/images'))
+    return gulp.src('src/images/**/*.*')
+               .pipe(gulp.dest('public/images'))
 });
 
 gulp.task('copyIcons', function () {
     gutil.log ('/Icons copying...');
-    return gulp.src('static/icons/**/*.*')
-               .pipe(gulp.dest('build/icons'))
+    return gulp.src('src/icons/**/*.*')
+               .pipe(gulp.dest('public/icons'))
 });
 
 gulp.task('copyVendors', function () {
 // gulp.task('default', function () {
     gutil.log ('/Vendors copying...');
-    return gulp.src('static/vendors/**/*.*')
-               .pipe(gulp.dest('build/vendors'))
+    return gulp.src('src/vendors/**/*.*')
+               .pipe(gulp.dest('public/vendors'))
 });
 
 gulp.task('express', function () {
@@ -134,11 +102,11 @@ gulp.task('express', function () {
     app.use(express.static(__dirname + '/build'));
 
     app.use(function (req, res) {
-        express.static.mime.define({
-            'application/x-font-woff': ['woff'],
-            'application/font-woff': ['woff'],
-            'application/font-woff2': ['woff2']
-        });
+        // express.static.mime.define({
+        //     'application/x-font-woff': ['woff'],
+        //     'application/font-woff': ['woff'],
+        //     'application/font-woff2': ['woff2']
+        // });
         // res.contentType(filename);
         // res.sendFile(__dirname + '/build/index.html');
         res.sendFile(__dirname + '/index.html');
@@ -151,13 +119,13 @@ gulp.task ('watch', function () {
     // build(true);
     // gulp.watch ('source/assets/javascript/**/*.js', ['logChanges', 'jshint']);
     gulp.watch ('src/scss/**/*.scss', [ 'build-css']);
-    gulp.watch ('static/data/*.*', [ 'copyData']);
-    gulp.watch ('static/images/**/*.*', [ 'copyImages']);
-    gulp.watch ('static/icons/**/*.*', [ 'copyIcons']);
-    gulp.watch ('static/vendors/**/*.*', [ 'copyVendors']);
+    gulp.watch ('src/data/*.*', [ 'copyData']);
+    gulp.watch ('src/images/**/*.*', [ 'copyImages']);
+    gulp.watch ('src/icons/**/*.*', [ 'copyIcons']);
+    gulp.watch ('src/vendors/**/*.*', [ 'copyVendors']);
     // gulp.watch ('source/assets/templates/**/*.*', [ 'templates-copy']);
-    gulp.watch ('static/index.html', [ 'copyIndexFile']);
-    gulp.watch ('src/**/*.*', [ 'webpackBuild']);
+    // gulp.watch ('public/index.html', [ 'copyIndexFile']);
+    // gulp.watch ('src/**/*.*', [ 'webpackBuild']);
 });
 
 // gulp.task ('default', function () {
@@ -177,6 +145,7 @@ gulp.task ('watch', function () {
 // });
 
 // gulp.task('default', ['copyIndexFile', 'copyData', 'copyImages', 'copyVendors','build-css', 'webpackBuild', 'watch']);
-gulp.task('default', ['copyData','build-css','copyVendors','copyIndexFile', 'copyImages','copyIcons', 'webpackBuild','express', 'watch',]);
-gulp.task('build', ['copyData','build-css','copyVendors','copyIndexFile', 'copyImages','copyIcons', 'webpackBuild']);
+// gulp.task('default', ['copyData','build-css','copyVendors', 'copyImages','copyIcons','express', 'watch',]);
+gulp.task('default', ['copyData','build-css','copyVendors', 'copyImages','copyIcons','watch', 'yarnStart']);
+gulp.task('build', ['copyData','build-css','copyVendors', 'copyImages','copyIcons']);
 // gulp.task('default', ['webpackBuild']);
