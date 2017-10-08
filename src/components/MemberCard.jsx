@@ -7,13 +7,17 @@ class MemberCard extends Component {
         let outerElmeClass = 'member--card-outer-div';
 
         return (
-            <div className="member--cards std__internal__block__mobile" id="member--cards">
+            <div className="member--cards std__internal__block" id="member--cards">
                 {this.props.membersData.map ((item, index)=> {
-                        if (this.props.membersData.length - 1 === index) {
-                            outerElmeClass = 'member--card-outer-div-last';
-                        } else {
-                            outerElmeClass = 'member--card-outer-div';
-                        }
+
+
+                        {/*if (this.props.membersData.length - 1 === index) {*/}
+                            {/*outerElmeClass = 'member--card-outer-div-last';*/}
+                        {/*} else {*/}
+                            {/*outerElmeClass = 'member--card-outer-div';*/}
+                        {/*}*/}
+
+                    outerElmeClass = 'member--card-outer-div';
 
                         let elem = <div className={outerElmeClass} key={index}>
                             <div className="img-content">

@@ -11,30 +11,38 @@
   //margin: auto;
 }
 
+.achievements__items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .achievements-features-img {
   @include bcg_img_properties();
-
   border: 0;
-
 }
 
 .achievements-features-img-card {
-  width: 25%;
-  display: inline-block;
+  width: 100%;
+  margin-bottom: -7px;
+  //display: flex;
+  //flex-wrap: wrap;
 }
 
 .achievement-value-title {
-  width: 40%;
+  width: 100%;
   margin: auto;
   position: relative;
-  margin-top: -25%;
+  //margin-top: -25%;
+  bottom: 35%;
   z-index: 2000;
+  height: 0;
 }
 
 .achievement-value {
   display: block;
   color: white;
-  //font-size: 14px;
+  //font-size: 24px;
   margin-bottom: 7px;
   font-weight: bold;
   text-align: center;
@@ -43,7 +51,33 @@
 .achievement-title {
   display: block;
   //color: $text_color1;
-  //font-size: 10px;
+  //font-size: 18px;
   text-align: center;
 }
 
+@media only screen and (min-width: 768px) {
+  .achievements-features-img-card {
+    //width: 50%;
+    width: 25%;
+    //min-width: 300px;
+    //display: flex;
+    //flex-wrap: nowrap;
+    margin-bottom: 0;
+  }
+  //
+  //.achievement-value {
+  //  //font-size: 14px
+  //}
+  //
+  //.achievement-title {
+  //  //font-size: 12px;
+  //
+  //}
+
+  .achievements__items {
+    //display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}

@@ -26,7 +26,7 @@ class ServicesTabs extends Component {
         this.tab = [];
 
         return (
-            <div className="services--tabs std__internal__block__mobile">
+            <div className="services--tabs std__internal__block">
                 <div className="services--tab">
                     {this.props.services.map ((item, index)=>
                         <div className="services--tab--title" ref={(tab)=>this.tab[index] = tab} key={index}

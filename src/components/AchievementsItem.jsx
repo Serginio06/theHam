@@ -82,10 +82,10 @@ class Achievements_item extends Component {
     };
 
     getFontSize() {
-        if (window.innerWidth <= 870) {
-            this.fontSizeValue = {fontSize: '14px'};
-            this.fontSizeTitle = {fontSize: '10px'};
-        } else if (window.innerWidth > 870 && window.innerWidth <= 1000) {
+        if (window.innerWidth <= 768) {
+            this.fontSizeValue = {fontSize: '24px'};
+            this.fontSizeTitle = {fontSize: '18px'};
+        } else if (window.innerWidth > 768 && window.innerWidth <= 1000) {
             this.fontSizeValue = {fontSize: '16px'};
             this.fontSizeTitle = {fontSize: '11px'};
         } else if (window.innerWidth > 1000 && window.innerWidth <= 1200) {
@@ -106,7 +106,7 @@ class Achievements_item extends Component {
     render() {
 
         return (
-            <div>
+            <div className="achievements__items">
 
                 {this.props.featuresArr.map ((item, index)=> {
                         let titleClass = 'achievement-title2';

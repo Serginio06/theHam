@@ -35,7 +35,7 @@ render ()
 
     return (
         <div className="std__internal__block__mobile">
-            <div className="services--tab">
+            <div className="portfolio--tab">
                 {this.props.portfolioTabsTitle.map ((item, index)=>
                     <div className="portfolio--tab--title" ref={(tab)=>this.tab[index] = tab} key={index}
                          onClick={this.onTabClick.bind (this, index)}>{item.title}</div>

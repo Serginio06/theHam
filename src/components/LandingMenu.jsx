@@ -43,18 +43,30 @@ class Landing_menu extends Component {
             <div className="header__title">
                 <div className="header__logo" style={this.state.logoImg} onClick={this.scrollToTop.bind(this)}></div>
                 <div className="header__menu" id="header__menu">
-                    <ul>
-                        {/*<li className="uppercase"><a onClick={this.scrollToTop.bind(this)} href="#" id="firstMenuItem">Home</a></li>*/}
-                        <li className="uppercase"><Link activeClass="activeMenuItm" to="top" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Home</Link></li>
-                        <li className="uppercase"><Link activeClass="activeMenuItm" to="services" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Services</Link></li>
-                        <li className="uppercase"><Link activeClass="activeMenuItm" to="about" spy={true} smooth={'easeOutQuart'} duration={1500} offset={-60} isDynamic={true}>About</Link></li>
-                        <li className="uppercase"><Link activeClass="activeMenuItm" to="portfolio" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Work</Link></li>
-                        <li className="uppercase"><Link activeClass="activeMenuItm" to="achievements" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Testimonial</Link></li>
-                        <li className="uppercase"><Link activeClass="activeMenuItm" to="feedback" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Blog</Link></li>
-                        <li className="uppercase"><Link activeClass="activeMenuItm" to="members" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Team</Link></li>
-                        <li className="uppercase"><Link activeClass="activeMenuItm" to="contacts" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Contact</Link></li>
-                        <hr/>
-                    </ul>
+                    <div className="header__menuItem_wrapper">
+                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="top" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Home</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="services" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Services</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="about" spy={true} smooth={'easeOutQuart'} duration={1500} offset={-60} isDynamic={true}>About</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="portfolio" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Work</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="achievements" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Testimonial</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="feedback" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Blog</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="members" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Team</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="contacts" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Contact</Link></div>
+                    </div>
+
+
+                    {/*<ul>*/}
+                        {/*/!*<li className="uppercase"><a onClick={this.scrollToTop.bind(this)} href="#" id="firstMenuItem">Home</a></li>*!/*/}
+                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="top" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Home</Link></li>*/}
+                        {/*<Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="services" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}><li className="uppercase">Services</li></Link>*/}
+                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="about" spy={true} smooth={'easeOutQuart'} duration={1500} offset={-60} isDynamic={true}>About</Link></li>*/}
+                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="portfolio" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Work</Link></li>*/}
+                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="achievements" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Testimonial</Link></li>*/}
+                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="feedback" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Blog</Link></li>*/}
+                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="members" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Team</Link></li>*/}
+                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="contacts" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Contact</Link></li>*/}
+                        {/*<hr/>*/}
+                    {/*</ul>*/}
                     <a href="javascript:void(0);" id="header__menu--icon"
                        onClick={menuIconClick.bind(this)}>&#9776;</a>
                 </div>

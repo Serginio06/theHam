@@ -2,6 +2,7 @@
 
 .feedback {
   background-color: $text-color3;
+  justify-content: center;
 }
 
 .feedback--form {
@@ -64,22 +65,36 @@
 
 .feedback--leave-msg--form {
   text-align: center;
+  width: 60%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .feedback-btn {
-  display: inline-block;
-  width: 40%;
-  text-align: left;
-  //padding: 20px 30px;
-  padding-left: 30px;
-  /* padding-top: 30px; */
-  position: relative;
-  top: 50px;
+  //display: inline-block;
+  //width: 40%;
+  //text-align: left;
+  ////padding: 20px 30px;
+  //padding-left: 30px;
+  ///* padding-top: 30px; */
+  //position: relative;
+  //top: 50px;
+  display: flex;
+  width: 45%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* text-align: left; */
+  //padding-left: 40px;
+  h2{
+    text-align: left;
+  }
 }
 
 .feedback-fields {
-  display: inline-block;
-  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
 }
 
 .feedback-input-title {

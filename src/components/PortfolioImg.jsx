@@ -55,7 +55,7 @@ class PortfolioImg extends Component {
         // console.log ('this.props.portfolioImages= ', this.props.portfolioImages);
 
         return (
-            <div className="std__internal__block__mobile">
+            <div className="portfolio__img-wrapper std__internal__block__mobile">
                 {this.props.portfolioImages.map ((item, index)=>
                     <img src={basePath+item.src} className="portfolio--images" alt={item.category} key={index} data-category={this.props.portfolioTabsTitle[item.category-1].title}
                          onMouseOver={this.showImgCategory.bind (this)}

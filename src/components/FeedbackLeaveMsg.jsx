@@ -20,7 +20,7 @@ class Feedback_leave_msg extends Component {
 
 
         return (
-            <div className="feedback--leave-msg--form std__internal__block__mobile">
+            <div className="feedback--leave-msg--form std__internal__block">
                 <div className="feedback-fields">
                     <input className="feedback-input-title" type="text" placeholder="Title" ref={(input) => this.msgTitle = input} />
                     <textarea className="feedback-input-msg" type="text" placeholder="Message" ref={(input) => this.msgMsg = input} />

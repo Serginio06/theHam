@@ -2,34 +2,51 @@
   background-color: #f8fcfe;
 }
 
+.portfolio--tab {
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+
 .portfolio--tab--title {
-  display: inline-block;
-  //width: 156px;
-  //width: 16%;
-  height: 40px;
-  font-size: 11px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  padding: 12px 15px;
+  width: 100%;
+  -ms-flex: none;
+  flex: none;
+  height: 50px;
+  font-size: 14px;
+  padding: 0 5px;
   position: relative;
-  z-index: 1000;
-  background-color: white;
+  //z-index: 1000;
+  background-color: #f8fcfe;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  color: black;
-  margin-left: -1px;
-  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
 .portfolio--tab--title.active {
   //background-color: $text_color1;
-  color: $text_color1;
-  border-top: 2px solid $text_color1;
-  height: 41px;
+  //color: $text_color1;
+  //border-top: 2px solid $text_color1;
+  //height: 41px;
+  background-color: #18cfab;
+  color: white;
 }
 
 .portfolio--images {
-  display: inline-block;
-  width: 25%;
+  display: flex;
+  width: 50%;
+  min-width: 300px;
+  align-self: baseline;
 }
 
 //.portfolio--category--popup.slideUp, .portfolio--category--popup.slideDown {
@@ -52,3 +69,44 @@
   opacity: 0.6;
   //@include slideRight();
 }
+
+
+.portfolio__img-wrapper{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+///* =============== FOR TABLETS AND DESCTOP: ========================*/
+///* =============== FOR TABLETS AND DESCTOP: ========================*/
+@media only screen and (min-width: 768px) {
+
+  .portfolio--tab--title {
+width: auto;
+    //display: inline-block;
+    ////width: 156px;
+    ////width: 16%;
+    //height: 40px;
+    //font-size: 11px;
+    //margin-top: 20px;
+    //margin-bottom: 40px;
+    padding: 12px 15px;
+    //position: relative;
+    //z-index: 1000;
+    //background-color: white;
+    //border: 1px solid rgba(0, 0, 0, 0.2);
+    //color: black;
+    //margin-left: -1px;
+    //font-weight: bold;
+  }
+
+
+  .portfolio--images {
+    width: 25%;
+    min-width: 0;
+  }
+}
+
+
+
