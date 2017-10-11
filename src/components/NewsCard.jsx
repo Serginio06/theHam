@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-// import basePath from './../config/config';
 
 import newsPic1 from './../images/service8.jpeg';
 import newsPic2 from './../images/service7.jpeg';
@@ -44,30 +43,34 @@ class NewsCard extends Component {
 
 
                         let elem =
-                            <Link className="news-div" key={index} to={"/news-details/" + item.id}>
-                                {/*<div className="news-div">*/}
-                                <div className={outerElmeClass}>
 
-                                    <img className="news--card-img" src={newImgSrc}></img>
-                                    {/*<div className="news--card-img" style={newImg}></div>*/}
-                                    <div className="news--card-name-div">
-                                        <span className="news--card-name-div--name">{this.title + "_" + (+index+1)}</span>
+                                <Link className="news-div" key={index} to={"/news/" + item.id}>
+
+                                    {/*<div className="news-div">*/}
+                                    <div className={outerElmeClass}>
+
+                                        <img className="news--card-img" src={newImgSrc}></img>
+                                        {/*<div className="news--card-img" style={newImg}></div>*/}
+                                        <div className="news--card-name-div">
+                                            <span className="news--card-name-div--name">{this.title + "_" + (
+                                            +index + 1
+                                            )}</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div
-                                    className="news__date-wrapper">
-                                    <div className="news__date">
+                                    <div
+                                        className="news__date-wrapper">
+                                        <div className="news__date">
                                         <span>
                                           {transformedDate.getDate ()}
                                         </span>
 
-                                        <span>
+                                            <span>
                                           {transformedDate.toLocaleString ("en-us", {month: "short"})}
                                         </span>
+                                        </div>
                                     </div>
-                                </div>
-                                {/*</div>*/}
-                            </Link>
+                                </Link>
+
 
                         return elem
                     }

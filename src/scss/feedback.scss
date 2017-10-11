@@ -65,36 +65,30 @@
 
 .feedback--leave-msg--form {
   text-align: center;
-  width: 60%;
+  width: 80%;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
+
+
+
 .feedback-btn {
-  //display: inline-block;
-  //width: 40%;
-  //text-align: left;
-  ////padding: 20px 30px;
-  //padding-left: 30px;
-  ///* padding-top: 30px; */
-  //position: relative;
-  //top: 50px;
-  display: flex;
-  width: 45%;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  /* text-align: left; */
-  //padding-left: 40px;
+  width: 100%;
+  justify-content: center;
+  padding-left: 0;
+  padding-top: 40px;
   h2{
-    text-align: left;
+    text-align: center;
   }
 }
 
 .feedback-fields {
   display: flex;
   flex-wrap: wrap;
-  width: 45%;
+  width: 100%;
+
 }
 
 .feedback-input-title {
@@ -114,4 +108,29 @@
   color: #a0b9c6;
   padding: 10px;
   border: 1px solid $text-color4;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .feedback-fields{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+  }
+
+  .feedback--leave-msg--form {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .feedback-btn {
+    display: flex;
+    padding-left: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    h2{
+      text-align: left;
+    }
+  }
+
 }

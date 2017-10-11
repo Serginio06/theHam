@@ -43,6 +43,7 @@
   justify-content: center;
   align-content: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .services--tab--title.active {
@@ -90,6 +91,13 @@
   //text-align: left;
   //width: 100%;
   //margin-left: 5px;
+}
+
+.services-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
 }
 
 @media only screen and (min-width: 768px) {

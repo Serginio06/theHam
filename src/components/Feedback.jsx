@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {asyncGetInitFeedback} from './actions/async'
 import FeedbackMessages from './FeedbackMessages.jsx'
 import FeedbackLeaveMsg from './FeedbackLeaveMsg.jsx'
-
+import basePath from './../config/config';
 
 class Feedback extends Component {
 
@@ -33,7 +33,7 @@ class Feedback extends Component {
         return (
             <div className="feedback" id="feedback">
                 <h2 className="black-text">Feedback
-                    <img src="./images/stripes.png" alt="" className="strips--img"/>
+                    <img src={basePath+"images/stripes.png"} alt="" className="strips--img"/>
                 </h2>
 
                 <FeedbackMessages feedbackStore={this.props.feedbackStore} deleteMsg={this.deleteMsg.bind (this)} />

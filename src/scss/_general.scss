@@ -20,7 +20,7 @@ $btn--height--mobile: 30px;
 $btn--bkg--color1: #18cfab;
 $btn--bkg--color2: #b8b8b8;
 
-$max--std--blocks--width: 800px;
+$max--std--blocks--width: 1000px;
 //$max--blocks--width--mobile: 1000px;
 //$min--blocks--width--mobile: 1000px;
 $min--std-blocks--width: 320px;
@@ -190,13 +190,11 @@ h4 {
   margin: 20px auto;
 }
 
-
 .green-btn-white-top {
   display: inline-block;
   @include btn-std();
   background-color: $text_color1;
   border-top: 3px solid white;
-  //border-top-color: white;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   padding: 10px 15px;
@@ -211,15 +209,10 @@ h4 {
   display: inline-block;
   @include btn-std();
   background-color: $text_color1;
-  //border-top: 3px solid white;
-  //border-top-color: white;
-  //border-top-left-radius: 3px;
-  //border-top-right-radius: 3px;
   padding: 10px 15px;
   color: white;
   font-size: 12px;
   text-transform: uppercase;
-  //border-radius: 5px;
 }
 
 .blue-btn {
@@ -227,25 +220,19 @@ h4 {
   @include btn-std();
   background-color: #00cbf6;
   border-top: 3px solid white;
-  //border-top-color: white;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   padding: 10px 15px;
   color: white;
   font-size: 12px;
-  //margin-left: 20px;
   text-transform: uppercase;
   margin-top: 10px;
   width: 300px;
 }
 
-//.std__internal__block__mobile {
 .std__internal__block{
-  //min-width: $max--blocks--width--mobile;
   display: flex;
   width: 100%;
-  //max-width: $max--blocks--width--mobile;
-  //min-width: $min--std-blocks--width;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -253,12 +240,7 @@ h4 {
 .landing, .header__title, .about, .services, .portfolio, .landing, .members, .achievements, .news, .feedback, .contact-us, .footer {
   width: 100%;
   min-width: $min--std-blocks--width;
-  //text-align: center;
-  //height: 400px;
   overflow: auto;
-  //margin-bottom: 40px;
-  //max-width: 1280px;
-  //margin: 0 auto 0 auto;
   padding: 10px 0 40px 0;
   display: flex;
   justify-content: center;
@@ -295,18 +277,12 @@ h4 {
   }
 
   .std__internal__block {
-    //width: 80%;
-    //min-width: $min--blocks--width--watch;
     max-width: $max--std--blocks--width;
-
-    //display: block;
-    //margin: 0 auto;
   }
 
   .blue-btn {
     margin-top: 0;
     width: 150px;
-    //width: 100%;
   }
 
   .green-btn-white-top{

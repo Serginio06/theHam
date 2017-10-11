@@ -4,6 +4,7 @@ import NewsCard from './NewsCard.jsx';
 import {connect} from 'react-redux';
 // import {asyncGetInitNews, asyncMoreNews} from './actions/async'
 import {asyncGetInitNews} from './actions/async'
+import basePath from './../config/config';
 
 class News extends Component {
 
@@ -24,6 +25,7 @@ class News extends Component {
     render() {
 
         // console.log('this.props.newsStore= ', this.props.newsStore);
+
         let generateNewsCard = '';
         if (this.props.newsStore) {
             generateNewsCard = <NewsCard news={this.props.newsStore}/>;
@@ -32,7 +34,7 @@ class News extends Component {
         return (
             <div className="news" id="news">
                 <h2 className="black-text">Breaking news
-                    <img src="./images/stripes.png" alt="" className="strips--img"/>
+                    <img src={basePath+"images/stripes.png"} alt="" className="strips--img"/>
                 </h2>
 
                 {generateNewsCard}

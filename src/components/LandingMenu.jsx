@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {menuIconClick} from './../js/menuHandler'
+// import {menuIconClick} from './../js/menuHandler'
+import {menuItemClick} from './../js/menuHandler'
 import logoImg from './../images/Logo.png';
 var Scroll    = require('react-scroll');
 
@@ -44,14 +45,14 @@ class Landing_menu extends Component {
                 <div className="header__logo" style={this.state.logoImg} onClick={this.scrollToTop.bind(this)}></div>
                 <div className="header__menu" id="header__menu">
                     <div className="header__menuItem_wrapper">
-                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="top" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Home</Link></div>
-                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="services" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Services</Link></div>
-                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="about" spy={true} smooth={'easeOutQuart'} duration={1500} offset={-60} isDynamic={true}>About</Link></div>
-                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="portfolio" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Work</Link></div>
-                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="achievements" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Testimonial</Link></div>
-                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="feedback" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Blog</Link></div>
-                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="members" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Team</Link></div>
-                        <div className="header__menuItem" ><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="contacts" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Contact</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="top" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Home</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="services" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Services</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="about" spy={true} smooth={'easeOutQuart'} duration={1500} offset={-60} isDynamic={true}>About</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="portfolio" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Work</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="achievements" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Testimonial</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="feedback" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Blog</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="members" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Team</Link></div>
+                        <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="contacts" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Contact</Link></div>
                     </div>
 
 
@@ -68,7 +69,7 @@ class Landing_menu extends Component {
                         {/*<hr/>*/}
                     {/*</ul>*/}
                     <a href="javascript:void(0);" id="header__menu--icon"
-                       onClick={menuIconClick.bind(this)}>&#9776;</a>
+                       onClick={menuItemClick.bind(this)}>&#9776;</a>
                 </div>
             </div>
         )
