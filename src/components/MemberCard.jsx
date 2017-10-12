@@ -10,13 +10,6 @@ class MemberCard extends Component {
             <div className="member--cards std__internal__block" id="member--cards">
                 {this.props.membersData.map ((item, index)=> {
 
-
-                        {/*if (this.props.membersData.length - 1 === index) {*/}
-                            {/*outerElmeClass = 'member--card-outer-div-last';*/}
-                        {/*} else {*/}
-                            {/*outerElmeClass = 'member--card-outer-div';*/}
-                        {/*}*/}
-
                     outerElmeClass = 'member--card-outer-div';
 
                         let elem = <div className={outerElmeClass} key={index}>

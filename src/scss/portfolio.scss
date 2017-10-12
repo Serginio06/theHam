@@ -51,23 +51,43 @@
 }
 
 //.portfolio--category--popup.slideUp, .portfolio--category--popup.slideDown {
-.portfolio--category--popup, .portfolio--category--popup.slideDown {
+//.portfolio--category--popup.slideDown {
+.portfolio--category--popup {
   //background-color: rgba(255,255,255,0.8);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
   background-color: $text_color1;
   color: white;
   font-weight: 500;
   position: fixed;
-  top:0;
+  //margin-top: 50px;
+  top:50px;
   z-index: 10000;
-  opacity: 0;
-  @include slideUp();
-  //@include slideLeft(100px);
-
+  opacity: 0.8;
+  height: 0;
+  overflow: hidden;
+  @include transitionHeight(0.5s)
 }
 
-.portfolio--category--popup.slideDown {
-  @include slidedown(30px);
-  opacity: 0.6;
+
+.portfolio--category--popupImg{
+  align-self: center;
+  padding: 10px 0;
+}
+
+.portfolio--category--popupSpan{
+  align-self: center;
+  width: 100%;
+  text-align: center;
+}
+
+//.portfolio--category--popup
+.slideDown {
+  //@include slidedown(300px);
+  opacity: 0.9;
+
   //@include slideRight();
 }
 

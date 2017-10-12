@@ -5,8 +5,6 @@ import logoImg from './../images/Logo.png';
 var Scroll    = require('react-scroll');
 
 var Link       = Scroll.Link;
-// var DirectLink = Scroll.DirectLink;
-// var Element    = Scroll.Element;
 var Events     = Scroll.Events;
 var scroll     = Scroll.animateScroll;
 var scrollSpy  = Scroll.scrollSpy;
@@ -19,10 +17,6 @@ class Landing_menu extends Component {
             logoImg:{backgroundImage:`url(${logoImg})`}
         }
     }
-
-    // menuIconClick() {
-    //     console.log ('click on menu item');
-    // }
 
     handleSetActive(e){
         console.log('e= ', e);
@@ -39,7 +33,6 @@ class Landing_menu extends Component {
 
     render() {
         
-        // console.log('menuIconClick=', menuIconClick);
         return (
             <div className="header__title">
                 <div className="header__logo" style={this.state.logoImg} onClick={this.scrollToTop.bind(this)}></div>
@@ -55,21 +48,9 @@ class Landing_menu extends Component {
                         <div className="header__menuItem" ><Link onClick={menuItemClick.bind(this)} activeClass="activeMenuItm" to="contacts" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Contact</Link></div>
                     </div>
 
-
-                    {/*<ul>*/}
-                        {/*/!*<li className="uppercase"><a onClick={this.scrollToTop.bind(this)} href="#" id="firstMenuItem">Home</a></li>*!/*/}
-                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="top" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Home</Link></li>*/}
-                        {/*<Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="services" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}><li className="uppercase">Services</li></Link>*/}
-                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="about" spy={true} smooth={'easeOutQuart'} duration={1500} offset={-60} isDynamic={true}>About</Link></li>*/}
-                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="portfolio" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Work</Link></li>*/}
-                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="achievements" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Testimonial</Link></li>*/}
-                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="feedback" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Blog</Link></li>*/}
-                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="members" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Team</Link></li>*/}
-                        {/*<li className="uppercase"><Link onClick={menuIconClick.bind(this)} activeClass="activeMenuItm" to="contacts" spy={true} smooth={'easeOutQuart'} duration={1000} offset={-60} isDynamic={true}>Contact</Link></li>*/}
-                        {/*<hr/>*/}
-                    {/*</ul>*/}
-                    <a href="javascript:void(0);" id="header__menu--icon"
-                       onClick={menuItemClick.bind(this)}>&#9776;</a>
+                    {/*<a href="javascript:void(0);" id="header__menu--icon"*/}
+                    <button id="header__menu--icon"
+                       onClick={menuItemClick.bind(this)}>&#9776;</button>
                 </div>
             </div>
         )
@@ -91,6 +72,7 @@ class Landing_menu extends Component {
     scrollToTop() {
         scroll.scrollToTop();
     }
+
     componentWillUnmount() {
         Events.scrollEvent.remove('begin');
         Events.scrollEvent.remove('end');

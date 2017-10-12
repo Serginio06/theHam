@@ -7,9 +7,14 @@ class Feedback_leave_msg extends Component {
 
 
     addMsg() {
-        this.props.addMsg (this.msgTitle.value, this.msgMsg.value);
-        this.msgTitle.value = '';
-        this.msgMsg.value = '';
+        if ( this.msgTitle.value && this.msgMsg.value ) {
+            this.props.addMsg (this.msgTitle.value, this.msgMsg.value);
+            this.msgTitle.value = '';
+            this.msgMsg.value = '';
+        } else {
+            alert('Please enter Title and Message before submit')
+        }
+
     }
 
 

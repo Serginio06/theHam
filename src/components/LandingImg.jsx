@@ -84,7 +84,6 @@ class Landing_img extends Component {
     }
 
     stopAutoSlidesChange() {
-        // console.log ('mouse over, stopping slide change for 5 sec');
         this.stopSliderChange ();
     }
 
@@ -155,6 +154,10 @@ class Landing_img extends Component {
         // let self = this;
         this.startSliderChanging ();
         this.setState ({sliderUrl: {backgroundImage: `url(${imgUrls[this.currentSlideId]})`}})
+    }
+
+    componentWillUnmount(){
+        this.stopAutoSlidesChange();
     }
 }
 

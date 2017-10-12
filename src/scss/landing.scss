@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   position: fixed;
-  z-index: 10000;
+  z-index: 13000;
   //background-color: rgba(106, 97, 116, 1);
   background-color: $menu_bkg;
   width: 100%;
@@ -17,9 +17,6 @@
 }
 
 .header__logo {
-  //position: relative;
-  //top: 10px;f
-  //left: 10%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -28,7 +25,7 @@
   color: $text_color1;
   font-size: 20px;
   font-weight: 900;
-  z-index: 110000;
+  z-index: 130000;
   cursor: pointer;
   margin-left: 5%;
 }
@@ -37,8 +34,6 @@
   position: absolute;
   top: 0;
   right: -260px;
-  //z-index: 12000;
-  //background: wheat;
 
   @include transitionAll(0.6s);
 
@@ -51,9 +46,6 @@
     padding-top: 59px;
     border: 1px solid black;
     border-radius: 5px;
-    //display: none;
-    //position: absolute;
-    //left:-150px;
 
 
     li, .header__menuItem{
@@ -74,6 +66,10 @@
   }
 }
 
+#header__menu--icon:focus {
+  outline:none;
+}
+
 #header__menu--icon {
   position: absolute;
   top:10px;
@@ -85,7 +81,10 @@
   cursor: pointer;
   text-decoration: none;
   margin-right: 10px;
+  border: none;
 }
+
+
 
 //#header__menu--icon:hover {
 //  color: $text-color1;
@@ -100,15 +99,7 @@ hr {
 }
 
 .header__menu.responsive {
-  //position: relative;
-  //z-index: 10000;
   right: 0;
-  ul {
-    //display: block;
-    //position: absolute;
-
-    //top: $header__menu--height;
-  }
 }
 
 
@@ -123,7 +114,7 @@ hr {
   background-color: #3c3c3c;
   width: 100%;
   position: relative;
-  z-index: 500;
+  z-index: 12500;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -188,6 +179,9 @@ hr {
 .landing-features {
   width: 100%;
   text-align: left;
+  position: relative;
+  //top: 60px;
+  z-index: 13500;
 }
 
 .landing-features-img {
@@ -270,17 +264,6 @@ hr {
     outline: none;
     outline-offset: 0;
   }
-
-
-  //.header__menu.responsive a {
-  //  color: $text-color1;
-  //  text-decoration: none;
-  //  outline: none;
-  //  outline-offset: 0;
-  //  border-bottom-style: solid;
-  //  border-bottom-color: $text-color1;
-  //  border-bottom-width: 1px;
-  //}
 
   .landing-bkg-buttons{
     justify-content: space-between;

@@ -8,22 +8,20 @@ import OurServices from './OurServices.jsx';
 import Portfolio from './Portfolio.jsx';
 import Feedback from './Feedback.jsx';
 import ContactUs from './ContactUs.jsx';
-import Footer from './Footer.jsx';
-import ServicesTabs from './ServicesTabs.jsx'
 
 class FullVersion extends Component {
 
 
     render() {
-        // console.log ('FullVersion this.props=', this.props);
-        // console.log ('this.props.routes=', this.props.routes);
+
+        // console.log('FullVersion this.props.scrollTo=', this.props.scrollTo);
+        // console.log('FullVersion this.props', this.props);
+        // console.log('FullVersion window.location.pathname=', window.location.pathname);
 
         return (
             <div className="app">
                 <Landing/>
                 <OurServices/>
-                {/*<ServicesTabs />*/}
-                {/*<ServiceTabContent category={this.props.category}/>*/}
                 <About/>
                 <Portfolio/>
                 <Members/>
@@ -31,8 +29,6 @@ class FullVersion extends Component {
                 <News/>
                 <Feedback/>
                 <ContactUs/>
-                {/*<Footer/>*/}
-
             </div>
         );
     }

@@ -32,34 +32,33 @@ class AboutCharts extends Component {
             return true
         });
 
-
         this.setState ({chartElementColors: this.chartColors});
-
 
     }
 
     handleScroll(elementId) {
 
         let element = document.getElementById (elementId);
-        let ElelementTop = element.getBoundingClientRect ().top;
-        let windowHeight = window.innerHeight;
-        let status = '';
+        if ( element ) {
 
-        status = ElelementTop <= windowHeight;
+            let ElelementTop = element.getBoundingClientRect ().top;
+            let windowHeight = window.innerHeight;
+            let status = '';
 
-        if (status !== this.previouseStatus) {
+            status = ElelementTop <= windowHeight;
 
-            if (status === true) {
-                // this.startCounter ();
-                this.showChartsColors();
-                this.previouseStatus = status;
-            } else {
-                // this.stopCounter ();
-                // this.resetCounter ();
-                this.setState ({chartElementColors: []});
-                this.previouseStatus = status;
+            if (status !== this.previouseStatus) {
+
+                if (status === true) {
+                    this.showChartsColors();
+                    this.previouseStatus = status;
+                } else {
+                    this.setState ({chartElementColors: []});
+                    this.previouseStatus = status;
+                }
             }
         }
+
 
     }
 
@@ -67,12 +66,10 @@ class AboutCharts extends Component {
     componentWillMount() {
         this.chartElements = '';
         this.chartOuterElem = [];
-        // this.showCharts();
 
     }
 
     render() {
-
 
         this.chartTitles = ['interface', 'design', 'wordpress', 'html', 'app'];
 
@@ -102,14 +99,14 @@ class AboutCharts extends Component {
         this.chartOuterElem = [];
         this.chartColors=[];
         this.previouseStatus = false;
-        // window.addEventListener('scroll', this.handleScroll.bind(this, 'about-charts'));
-        window.addEventListener('scroll', this.handleScroll.bind(this, 'about-tabs'));
+        this.handleScroll=this.handleScroll.bind(this, 'about-tabs');
+        window.addEventListener('scroll', this.handleScroll);
     }
 
 
     componentWillUnmount(){
         // window.removeEventListener('scroll', this.handleScroll.bind(this, 'about-charts'));
-        window.removeEventListener('scroll', this.handleScroll.bind(this, 'about-tabs'));
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
 }

@@ -8,7 +8,15 @@ var initialCenter = { lng: 30.521135, lat: 50.441819 };
 class ContactUs extends Component {
 
     leaveMsg() {
-        console.log ('leaveMsg');
+        
+        console.log('this.msgName=', this.msgName && this.msgEmail);
+        
+        if ( this.msgName.value && this.msgEmail.value && this.msgMsg.value) {
+            alert('Thank you for your message. We will contact you soon');
+        } else {
+            alert('Please, fill in all fields to leave us a message');
+        }
+        // console.log ('leaveMsg');
     }
 
 
@@ -24,20 +32,21 @@ class ContactUs extends Component {
                         <ContactUsMap initialCenter={initialCenter} />
 
                     </div>
-                    <div className="contact--form">
-
-
+                    <form className="contact--form">
                         <input className="contact-input-title" type="text" placeholder="Name"
-                               ref={(input) => this.msgName = input}/>
+                               ref={(input) => this.msgName = input}
+                        />
                         <input className="contact-input-title" type="email" placeholder="Email"
-                               ref={(input) => this.msgEmail = input}/>
+                               ref={(input) => this.msgEmail = input}
+                               />
                         <textarea className="contact-input-msg" type="text" placeholder="Message"
-                                  ref={(input) => this.msgMsg = input}/>
-
-                        <button className="green-btn uppercase" onClick={this.leaveMsg.bind (this)}>
+                                  ref={(input) => this.msgMsg = input}
+                        />
+                        <button type="submit" className="green-btn uppercase" onClick={this.leaveMsg.bind (this)}
+                        >
                             Send request
                         </button>
-                    </div>
+                    </form>
 
                 </div>
             </div>

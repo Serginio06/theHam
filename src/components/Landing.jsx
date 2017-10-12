@@ -13,7 +13,7 @@ class Landing extends Component {
 
         return(
             <div className="landing" id="top">
-                <LandingMenu/>
+                <LandingMenu scrollTo={this.props.scrollTo}/>
                 <LandingImg/>
                 <LandingFeatures featuresImgArr={featuresImgPathArr}/>
             </div>

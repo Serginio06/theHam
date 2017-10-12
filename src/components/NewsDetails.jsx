@@ -34,10 +34,10 @@ class NewsDetails extends Component {
         return (
             <div>
                 <div className="news-details_header__title">
-                    <Link to="/" className="news-details_header__logo">
+                    <Link to="/" className="news-details_header__logo" >
                         <div className="header__logo" style={this.state.logoImg}></div>
                     </Link>
-                    <Link to="/" className="news-details_header__backBtn">
+                    <Link to="/news" className="news-details_header__backBtn" >
                         <div className="news-details_header__logo" style={this.state.backBtnImg}></div>
                     </Link>
                 </div>

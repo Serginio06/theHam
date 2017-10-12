@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-var Scroll    = require('react-scroll');
+var Scroll = require ('react-scroll');
 
 // var Link       = Scroll.Link;
 // var DirectLink = Scroll.DirectLink;
 // var Element    = Scroll.Element;
-var Events     = Scroll.Events;
-var scroll     = Scroll.animateScroll;
-var scrollSpy  = Scroll.scrollSpy;
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
 
 class Footer extends Component {
 
@@ -15,7 +15,8 @@ class Footer extends Component {
             <div className="footer" id="footer">
                 <p className="footer-text">Copyright 2015 <span>heHam</span> | All Right Reserved </p>
                 <div className="landing-bkg-right">
-                    <button type="button" className="footer-btnUp" aria-label="Left Align" onClick={this.scrollToTop.bind(this)}>
+                    <button type="button" className="footer-btnUp" aria-label="Left Align"
+                            onClick={this.scrollToTop.bind (this)}>
                         <span className="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
                     </button>
                 </div>
@@ -25,27 +26,52 @@ class Footer extends Component {
 
     componentDidMount() {
 
-        Events.scrollEvent.register('begin', function() {
+        Events.scrollEvent.register ('begin', function () {
             // console.log("begin", arguments);
         });
 
-        Events.scrollEvent.register('end', function() {
+        Events.scrollEvent.register ('end', function () {
             // console.log("end", arguments);
         });
 
-        scrollSpy.update();
+        scrollSpy.update ();
 
     }
+
+    componentWillUpdate() {
+        // console.log ('Footer componentWillUpdate');
+        if (this.props.scrollTo) {
+            setTimeout (()=> {
+                // let elem = document.getElementById('news');
+                let elem = document.getElementById (this.props.scrollTo);
+
+                if (elem) {
+                    let ElelementPosition = elem.getBoundingClientRect ();
+                    // console.log('ElelementPosition=', ElelementPosition);
+                    let elmentTop = ElelementPosition.top + window.scrollY;
+                    scroll.scrollTo (elmentTop - 95);
+                }
+                // let ElelementPosition = elem.getBoundingClientRect ();
+                // // console.log('ElelementPosition=', ElelementPosition);
+                // let elmentTop = ElelementPosition.top + window.scrollY;
+                // scroll.scrollTo (elmentTop - 95);
+                // console.log('elmentTop=', elmentTop);
+            }, 0)
+        }
+    }
+
     scrollToTop() {
-        scroll.scrollToTop({
+        scroll.scrollToTop ({
             duration: 1500,
             delay: 100,
             smooth: "easeInOutQuint",
         });
     }
+
     componentWillUnmount() {
-        Events.scrollEvent.remove('begin');
-        Events.scrollEvent.remove('end');
+        Events.scrollEvent.remove ('begin');
+        Events.scrollEvent.remove ('end');
+        // console.log('componentWillUnmount');
     }
 }
 

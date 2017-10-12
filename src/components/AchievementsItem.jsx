@@ -13,24 +13,26 @@ class Achievements_item extends Component {
     handleScroll(elementId) {
 
         let element = document.getElementById (elementId);
-        let ElelementTop = element.getBoundingClientRect ().top;
-        let windowHeight = window.innerHeight;
-        let status = '';
 
-        status = ElelementTop <= windowHeight;
+        if (element ) {
+            let ElelementTop = element.getBoundingClientRect ().top;
+            let windowHeight = window.innerHeight;
+            let status = '';
 
-        if (status !== this.previouseStatus) {
+            status = ElelementTop <= windowHeight;
 
-            if (status === true) {
-                this.startCounter ();
-                this.previouseStatus = status;
-            } else {
-                this.stopCounter ();
-                this.resetCounter ();
-                this.previouseStatus = status;
+            if (status !== this.previouseStatus) {
+
+                if (status === true) {
+                    this.startCounter ();
+                    this.previouseStatus = status;
+                } else {
+                    this.stopCounter ();
+                    this.resetCounter ();
+                    this.previouseStatus = status;
+                }
             }
         }
-
     }
 
     incrementCount() {
@@ -143,12 +145,17 @@ class Achievements_item extends Component {
         this.getFontSize ();
         this.counter = 0;
         this.previouseStatus = false;
-
-        window.addEventListener ('scroll', this.handleScroll.bind (this, 'achievements-features'));
+        this.handleScroll = this.handleScroll.bind (this, 'achievements-features');
+        // window.addEventListener ('scroll', this.handleScroll.bind (this, 'achievements-features'));
+        window.addEventListener ('scroll', this.handleScroll);
     }
 
     componentWillUnmount() {
-        window.removeEventListener ('scroll', this.handleScroll.bind (this, 'achievements-features'));
+        // console.log('Achievements_item will unmount');
+        this.stopCounter ();
+        this.resetCounter ();
+        // this.previouseStatus = status;
+        window.removeEventListener ('scroll', this.handleScroll);
     }
 }
 

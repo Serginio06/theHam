@@ -9,10 +9,8 @@ var newsPics = [newsPic1, newsPic2];
 class NewsCard extends Component {
 
     render() {
-        // this.src = './React/TheHam/build/images/member2.jpeg';
         this.title = 'Amazing blog post';
         let outerElmeClass = '';
-        let newImg = {};
         let newImgSrc;
 
         return (
@@ -21,19 +19,7 @@ class NewsCard extends Component {
                     (item, index)=> {
                         let transformedDate = new Date (item.date);
 
-                        {/*if (index > 0 && index % 3 === 0 || index % 7 === 0 || index % 11 === 0 || index % 15 === 0 || index % 19 === 0) {*/}
-                        {/*outerElmeClass = 'news--card-outer-div-last';*/}
-                        {/*} else {*/}
-                        {/*outerElmeClass = 'news--card-outer-div';*/}
-                        {/*}*/}
-
                         outerElmeClass = 'news--card-outer-div';
-
-                        if (index % 2 === 0) {
-                            newImg = {backgroundImage: `url(${newsPics[0]})`}
-                        } else {
-                            newImg = {backgroundImage: `url(${newsPics[1]})`}
-                        }
 
                         if (index % 2 === 0) {
                             newImgSrc = newsPics[0]
@@ -49,7 +35,7 @@ class NewsCard extends Component {
                                     {/*<div className="news-div">*/}
                                     <div className={outerElmeClass}>
 
-                                        <img className="news--card-img" src={newImgSrc}></img>
+                                        <img className="news--card-img" src={newImgSrc} alt="this.title"></img>
                                         {/*<div className="news--card-img" style={newImg}></div>*/}
                                         <div className="news--card-name-div">
                                             <span className="news--card-name-div--name">{this.title + "_" + (
